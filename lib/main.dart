@@ -41,10 +41,6 @@ class _MyAppState extends State<MyApp> {
 
   void updateThemeFromSharedPref() async {
     String themeText = await getThemeFromSharedPref();
-    if (themeText == 'light') {
       setTheme(Brightness.light);
-    } else {
-      setTheme(Brightness.dark);
-    }
   }
 }

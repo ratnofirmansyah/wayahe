@@ -47,46 +47,6 @@ class _SettingsPageState extends State<SettingsPage> {
                         const EdgeInsets.only(top: 24, left: 24, right: 24),
                     child: Icon(OMIcons.arrowBack)),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, top: 36, right: 24),
-                child: buildHeaderWidget(context),
-              ),
-              buildCardWidget(Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('App Theme',
-                      style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 24)),
-                  Container(
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Radio(
-                        value: 'light',
-                        groupValue: selectedTheme,
-                        onChanged: handleThemeSelection,
-                      ),
-                      Text(
-                        'Light theme',
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Radio(
-                        value: 'dark',
-                        groupValue: selectedTheme,
-                        onChanged: handleThemeSelection,
-                      ),
-                      Text(
-                        'Dark theme',
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
-                  ),
-                ],
-              )),
               buildCardWidget(Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
@@ -142,20 +102,6 @@ class _SettingsPageState extends State<SettingsPage> {
       margin: EdgeInsets.all(24),
       padding: EdgeInsets.all(16),
       child: child,
-    );
-  }
-
-  Widget buildHeaderWidget(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 8, bottom: 16, left: 8),
-      child: Text(
-        'Settings',
-        style: TextStyle(
-            fontFamily: 'ZillaSlab',
-            fontWeight: FontWeight.w700,
-            fontSize: 36,
-            color: Theme.of(context).primaryColor),
-      ),
     );
   }
 
