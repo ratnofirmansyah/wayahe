@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   setNotesFromDB() async {
-    print("Entered setNotes");
     var fetchedNotes = await NotesDatabaseService.db.getNotesFromDB();
     setState(() {
       notesList = fetchedNotes;
@@ -56,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           gotoEditNote();
         },
-        label: Text('Add note'.toUpperCase()),
+        label: Text('Add Data'.toUpperCase()),
         icon: Icon(Icons.add),
       ),
       body: GestureDetector(
@@ -199,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
           margin: EdgeInsets.only(top: 8, bottom: 32, left: 10),
           width: headerShouldHide ? 0 : 200,
           child: Text(
-            'Your Notes',
+            'Wayahe List',
             style: TextStyle(
                 fontFamily: 'ZillaSlab',
                 fontWeight: FontWeight.w700,

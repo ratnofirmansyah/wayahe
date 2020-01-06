@@ -47,116 +47,37 @@ class _SettingsPageState extends State<SettingsPage> {
                         const EdgeInsets.only(top: 24, left: 24, right: 24),
                     child: Icon(OMIcons.arrowBack)),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16, top: 36, right: 24),
-                child: buildHeaderWidget(context),
-              ),
-              buildCardWidget(Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('App Theme',
-                      style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 24)),
-                  Container(
-                    height: 20,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Radio(
-                        value: 'light',
-                        groupValue: selectedTheme,
-                        onChanged: handleThemeSelection,
-                      ),
-                      Text(
-                        'Light theme',
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Radio(
-                        value: 'dark',
-                        groupValue: selectedTheme,
-                        onChanged: handleThemeSelection,
-                      ),
-                      Text(
-                        'Dark theme',
-                        style: TextStyle(fontSize: 18),
-                      )
-                    ],
-                  ),
-                ],
-              )),
               buildCardWidget(Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Text('About app',
-                      style: TextStyle(
-                          fontFamily: 'ZillaSlab',
-                          fontSize: 24,
-                          color: Theme.of(context).primaryColor)),
-                  Container(
-                    height: 40,
-                  ),
-                  Center(
-                    child: Text('Developed by'.toUpperCase(),
-                        style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1)),
-                  ),
+                  Text('Developed by',
+                      style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 24)),
                   Center(
                       child: Padding(
-                    padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
-                    child: Text(
-                      'Roshan',
-                      style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 24),
-                    ),
-                  )),
-                  Container(
-                    alignment: Alignment.center,
-                    child: OutlineButton.icon(
-                      icon: Icon(OMIcons.link),
-                      label: Text('GITHUB',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 1,
-                              color: Colors.grey.shade500)),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16)),
-                      onPressed: openGitHub,
-                    ),
-                  ),
-                  Container(
-                    height: 30,
-                  ),
+                        padding: const EdgeInsets.only(top: 25.0, bottom: 4.0),
+                        child: Text(
+                          'Fahrul Hudha S (185411145)',
+                          style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 18),
+                        ),
+                      )),
                   Center(
-                    child: Text('Made With'.toUpperCase(),
-                        style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 1)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          FlutterLogo(
-                            size: 40,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'Flutter',
-                              style: TextStyle(
-                                  fontFamily: 'ZillaSlab', fontSize: 24),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                        child: Text(
+                          'Ratno Firmansyah (185411146)',
+                          style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 18),
+                        ),
+                      )),
+                  Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
+                        child: Text(
+                          'Rangga Rifki Fadhil (185411174)',
+                          style: TextStyle(fontFamily: 'ZillaSlab', fontSize: 18),
+                        ),
+                      )),
+                  Container(
+                    height: 20,
                   ),
                 ],
               ))
@@ -184,20 +105,6 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  Widget buildHeaderWidget(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 8, bottom: 16, left: 8),
-      child: Text(
-        'Settings',
-        style: TextStyle(
-            fontFamily: 'ZillaSlab',
-            fontWeight: FontWeight.w700,
-            fontSize: 36,
-            color: Theme.of(context).primaryColor),
-      ),
-    );
-  }
-
   void handleThemeSelection(String value) {
     setState(() {
       selectedTheme = value;
@@ -208,9 +115,5 @@ class _SettingsPageState extends State<SettingsPage> {
       widget.changeTheme(Brightness.dark);
     }
     setThemeinSharedPref(value);
-  }
-
-  void openGitHub() {
-    launch('https://www.github.com/roshanrahman');
   }
 }
